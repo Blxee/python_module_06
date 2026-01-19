@@ -1,7 +1,9 @@
 import alchemy
 
-if __name__ == "__main__":
-    print("=== Sacred Scroll Mastery ===")
+
+def main():
+    """Demonstrate __init__.py usage."""
+    print("\n=== Sacred Scroll Mastery ===")
 
     print("\nTesting direct module access:")
 
@@ -18,13 +20,13 @@ if __name__ == "__main__":
     try:
         print("alchemy.create_earth(): ", end="")
         alchemy.create_earth()
-    except AttributeError as error:
+    except AttributeError:
         print("AttributeError - not exposed")
 
     try:
         print("alchemy.create_air(): ", end="")
         alchemy.create_air()
-    except AttributeError as error:
+    except AttributeError:
         print("AttributeError - not exposed")
 
     version = alchemy.__version__
@@ -32,3 +34,7 @@ if __name__ == "__main__":
     print("\nPackage metadata:")
     print("Version:", version)
     print("Author:", author)
+
+
+if __name__ == "__main__":
+    main()

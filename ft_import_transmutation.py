@@ -1,23 +1,32 @@
-"""
-$> python3 ft_import_transmutation.py
-=== Import Transmutation Mastery ===
+def main() -> None:
+    """Demonstrate different import styles."""
+    print("\n=== Import Transmutation Mastery ===")
 
-Method 1 - Full module import:
-alchemy.elements.create_fire(): Fire element created
+    print("\nMethod 1 - Full module import:")
+    import alchemy
 
-Method 2 - Specific function import:
-create_water(): Water element created
+    print("alchemy.elements.create_fire():", alchemy.elements.create_fire())
 
-Method 3 - Aliased import:
-heal(): Healing potion brewed with Fire element created and Water element created
+    print("\nMethod 2 - Specific function import:")
+    from alchemy.elements import create_water
 
-Method 4 - Multiple imports:
-create_earth(): Earth element created
-create_fire(): Fire element created
-strength_potion(): Strength potion brewed with Earth element created and Fire element created
+    print("create_water():", create_water())
 
-All import transmutation methods mastered!
-"""
-print("Method 1 - Full module import:")
-import alchemy.elements.create_fire
-print("alchemy.elements.create_fire():", alchemy.elements.create_fire())
+    print("\nMethod 3 - Aliased import:")
+    from alchemy.potions import healing_potion as heal
+
+    print("heal():", heal())
+
+    print("\nMethod 4 - Multiple imports:")
+    from alchemy.elements import create_earth, create_fire
+    from alchemy.potions import strength_potion
+
+    print("create_earth():", create_earth())
+    print("create_fire():", create_fire())
+    print("strength_potion():", strength_potion())
+
+    print("\nAll import transmutation methods mastered!")
+
+
+if __name__ == "__main__":
+    main()
