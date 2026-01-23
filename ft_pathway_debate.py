@@ -3,12 +3,14 @@ def main():
     print("\n=== Pathway Debate Mastery ===")
 
     print("\nTesting Absolute Imports (from basic.py):")
+    # test absolute imports in basic module.
     from alchemy.transmutation.basic import lead_to_gold, stone_to_gem
 
     print("lead_to_gold():", lead_to_gold())
     print("stone_to_gem():", stone_to_gem())
 
     print("\nTesting Relative Imports (from advanced.py):")
+    # test relative imports in advanced module.
     from alchemy.transmutation.advanced import (
         philosophers_stone,
         elixir_of_life,
@@ -18,6 +20,7 @@ def main():
     print("elixir_of_life():", elixir_of_life())
 
     print("\nTesting Package Access:")
+    # access the functions directly using the transmutations package.
     import alchemy
 
     print(

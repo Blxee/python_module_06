@@ -1,3 +1,5 @@
+"""Module that demostrates direct module access vs package level access."""
+
 import alchemy
 
 
@@ -7,6 +9,7 @@ def main():
 
     print("\nTesting direct module access:")
 
+    # call the functions using direct module access.
     print("alchemy.elements.create_fire():", alchemy.elements.create_fire())
     print("alchemy.elements.create_water():", alchemy.elements.create_water())
     print("alchemy.elements.create_earth():", alchemy.elements.create_earth())
@@ -14,9 +17,11 @@ def main():
 
     print("\nTesting package-level access (controlled by __init__.py):")
 
+    # try to access the package level interface.
     print("alchemy.create_fire():", alchemy.create_fire())
     print("alchemy.create_water():", alchemy.create_water())
 
+    # try to access hidden functions using the package level interface.
     try:
         print("alchemy.create_earth(): ", end="")
         alchemy.create_earth()
@@ -29,6 +34,7 @@ def main():
     except AttributeError:
         print("AttributeError - not exposed")
 
+    # print the version and author of the alchemy package.
     version = alchemy.__version__
     author = alchemy.__author__
     print("\nPackage metadata:")
